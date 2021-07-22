@@ -3,6 +3,7 @@ import 'BookSearchPage.dart';
 import 'MainPage.dart';
 
 void main() {
+  print("Hello Git!!");
   runApp(MyApp());
 }
 
