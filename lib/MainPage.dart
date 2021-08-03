@@ -53,11 +53,11 @@ class _MainPageState extends State<MainPage> {
       body: _selectedIndex == 0
           ? MyBookShelfPage()
           : _selectedIndex == 1
-              ? MyBookAddPage()
+              ? BookSearchPage()
               : _selectedIndex == 2
                   ? MainPage()
                   : _selectedIndex == 3
-                      ? BookSearchPage()
+                      ? MyBookAddPage()
                       : BookSearchResultPage(),
       //child: PageView(
       // controller: _pageController,

@@ -22,188 +22,33 @@ class _BookSearchResultPageState extends State<BookSearchResultPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Color(0xffeaebed),
-      appBar: AppBar(
-        backgroundColor: Color(0xffc17f84),
-        title: Center(
-            child:
-                Text('그라카이브', style: kAppBarText, textAlign: TextAlign.center)),
-        actions: <Widget>[
-          IconButton(
-            icon: Icon(
-              Icons.sensor_door,
-              color: Colors.white,
-            ),
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) {
-                  return MainPage();
-                }),
-              );
-            },
-          ),
-        ],
-      ),
-      body: Column(
-        children: [
-          SizedBox(
-            height: 40,
-          ),
-          Center(
-            child: Text(
-              '(      )의 검색 결과',
-              style: TextStyle(
-                fontSize: 20.0,
-                fontFamily: 'DoHyeon',
-                fontWeight: FontWeight.normal,
-                color: Color(0xffcc888d),
-              ),
-            ),
-          ),
-          SizedBox(
-            height: 100,
-          ),
-          Container(
-            alignment: Alignment.center,
-            child: Image.asset(
-              'images/simplejpmap.png',
-              width: 250.0,
-            ),
-          ),
-        ],
-      ),
-      drawer: Drawer(
-        child: ListView(
-          shrinkWrap: true,
-          children: <Widget>[
-            UserAccountsDrawerHeader(
-              accountName: Text(
-                "Kao Nashi",
-                style: kDrawerMainText,
-              ),
-              accountEmail: Text(
-                "no.kao.desu@gmail.com",
-                style: kDrawerMainText,
-              ),
-              decoration: BoxDecoration(
-                color: Color(0xFF0cc888d),
-              ),
-              //image: DecorationImage(
-              //image: ExactAssetImage('images/kaonashi.jpeg'),
-              //fit: BoxFit.cover,
-              //  ),
-              //),
-              currentAccountPicture: CircleAvatar(
-                backgroundImage: ExactAssetImage('images/kaonashi.jpeg'),
-              ),
-            ),
-            ListTile(
-                leading: Icon(Icons.account_box_rounded),
-                title: Text("개인 정보 관리", style: kDrawerText),
-                onTap: () {
-                  Navigator.pop(context);
-                }),
-            ListTile(
-                leading: Icon(Icons.assessment),
-                title: Text("이용 내역", style: kDrawerText),
-                onTap: () {
-                  Navigator.pop(context);
-                }),
-            ListTile(
-                leading: Icon(Icons.archive),
-                title: Text("저장한 글", style: kDrawerText),
-                onTap: () {
-                  Navigator.pop(context);
-                }),
-            ListTile(
-                leading: Icon(Icons.settings),
-                title: Text("설정", style: kDrawerText),
-                onTap: () {
-                  Navigator.pop(context);
-                }),
-            Divider(),
-            ListTile(
-              leading: Icon(Icons.power_settings_new),
-              title: Text("로그아웃", style: kDrawerText),
-              onTap: () {
-                Navigator.pop(context);
-              },
-            ),
-          ],
+    return Column(
+      children: [
+        SizedBox(
+          height: 40,
         ),
-      ),
-      floatingActionButton: Container(
-        width: 60.0,
-        height: 60.0,
-        child: FloatingActionButton(
-          backgroundColor: Color(0xff0e0a8ac),
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) {
-                  return BookSearchPage();
-                },
-              ),
-            );
-          },
-          child: Icon(
-            Icons.add_business,
-            size: 35.0,
+        Center(
+          child: Text(
+            '(      )의 검색 결과',
+            style: TextStyle(
+              fontSize: 20.0,
+              fontFamily: 'DoHyeon',
+              fontWeight: FontWeight.normal,
+              color: Color(0xffcc888d),
+            ),
           ),
         ),
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-      bottomNavigationBar: FlashyTabBar(
-        animationCurve: Curves.linear,
-        backgroundColor: Color(0xffe5e5e5),
-        selectedIndex: _selectedIndex,
-        showElevation: true,
-        onItemSelected: (index) => setState(() {
-          _selectedIndex = index;
-        }),
-        items: [
-          FlashyTabBarItem(
-            icon: Icon(Icons.auto_stories),
-            title: Text(
-              '내서재',
-              style: kBottomBarText,
-            ),
+        SizedBox(
+          height: 100,
+        ),
+        Container(
+          alignment: Alignment.center,
+          child: Image.asset(
+            'images/simplejpmap.png',
+            width: 250.0,
           ),
-          FlashyTabBarItem(
-            icon: Icon(Icons.search),
-            title: Text(
-              '책검색',
-              style: kBottomBarText,
-            ),
-          ),
-          FlashyTabBarItem(
-            icon: Icon(
-              Icons.attach_file_outlined,
-            ),
-            title: Text(
-              '북클립',
-              style: kBottomBarText,
-            ),
-          ),
-          FlashyTabBarItem(
-            icon: Icon(Icons.article),
-            title: Text(
-              '이야기',
-              style: kBottomBarText,
-            ),
-          ),
-          FlashyTabBarItem(
-            icon: Icon(Icons.emoji_food_beverage_outlined),
-            title: Text(
-              'Coffee?',
-              style: kBottomBarText,
-            ),
-          ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }
