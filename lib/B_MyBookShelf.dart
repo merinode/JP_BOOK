@@ -3,15 +3,16 @@ import 'package:book_demo/Const.dart';
 import 'MainPage.dart';
 import 'package:book_demo/MainPage.dart';
 import 'package:flashy_tab_bar/flashy_tab_bar.dart';
+import 'package:book_demo/BookSearchResultPage.dart';
 
-class MyBookShelfPage extends StatefulWidget {
+class MyBookAddPage extends StatefulWidget {
   //const ({Key? key}) : super(key: key);
 
   @override
-  _MyBookShelfPageState createState() => _MyBookShelfPageState();
+  _MyBookAddPageState createState() => _MyBookAddPageState();
 }
 
-class _MyBookShelfPageState extends State<MyBookShelfPage> {
+class _MyBookAddPageState extends State<MyBookAddPage> {
   int _selectedIndex = 0;
 
   @override
@@ -121,7 +122,7 @@ class _MyBookShelfPageState extends State<MyBookShelfPage> {
               context,
               MaterialPageRoute(
                 builder: (context) {
-                  return MyBookShelfPage();
+                  return BookSearchResultPage();
                 },
               ),
             );

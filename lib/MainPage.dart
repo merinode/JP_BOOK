@@ -1,8 +1,10 @@
+import 'package:book_demo/BookSearchPage.dart';
+import 'package:book_demo/BookSearchResultPage.dart';
 import 'package:flashy_tab_bar/flashy_tab_bar.dart';
 import 'package:flutter/material.dart';
 import 'Const.dart';
-import 'BookSearchPage.dart';
 import 'BookAddPage.dart';
+import 'B_MyBookShelf.dart';
 
 class MainPage extends StatefulWidget {
   //MyHomePage({Key key, this.title}) : super(key: key);
@@ -48,27 +50,35 @@ class _MainPageState extends State<MainPage> {
           ),
         ],
       ),
-      body: SizedBox.expand(
-        child: PageView(
-          controller: _pageController,
-          children: List.generate(4, (index) {
-            return Container(
-              child: Center(
-                child: Text("data $index"),
-              ),
-              color: Colors.primaries.elementAt(index),
-            );
-          }),
-          onPageChanged: (int index) {
-            setState(() => _selectedIndex = index);
-          },
-        ),
-        //Container(
-        //alignment: Alignment.center,
-        //child: Image.asset(
-        //'images/simplejpmap.png',
-        //width: 250.0,
-      ),
+      body: _selectedIndex == 0
+          ? MyBookShelfPage()
+          : _selectedIndex == 1
+              ? MyBookAddPage()
+              : _selectedIndex == 2
+                  ? MainPage()
+                  : _selectedIndex == 3
+                      ? BookSearchPage()
+                      : BookSearchResultPage(),
+      //child: PageView(
+      // controller: _pageController,
+      //children: List.generate(4, (index) {
+      //return Container(
+      //child: Center(
+      // child: Text("data $index"),
+      // ),
+      //color: Colors.primaries.elementAt(index),
+      //);
+      //}),
+      // onPageChanged: (int index) {
+      //setState(() => _selectedIndex = index)
+      //},
+      // ),
+      //Container(
+      //alignment: Alignment.center,
+      //child: Image.asset(
+      //'images/simplejpmap.png',
+      //width: 250.0,
+
       drawer: Drawer(
         child: ListView(
           shrinkWrap: true,
@@ -157,6 +167,7 @@ class _MainPageState extends State<MainPage> {
         selectedIndex: _selectedIndex,
         showElevation: true,
         onItemSelected: (index) => setState(() {
+          print('index : $index');
           _selectedIndex = index;
         }),
         items: [
