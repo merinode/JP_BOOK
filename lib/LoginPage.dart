@@ -1,17 +1,20 @@
+//앱 로그인 페이지
+//현재는 inactive
 import 'package:book_demo/BookSearchPage.dart';
 import 'package:flutter/material.dart';
 import 'package:flashy_tab_bar/flashy_tab_bar.dart';
 import 'Const.dart';
+import 'package:book_demo/MainPage.dart';
 
-class MainPage extends StatefulWidget {
+class LoginPage extends StatefulWidget {
   //MyHomePage({Key key, this.title}) : super(key: key);
   //final String title;
 
   @override
-  _MainPageState createState() => _MainPageState();
+  _LoginPageState createState() => _LoginPageState();
 }
 
-class _MainPageState extends State<MainPage> {
+class _LoginPageState extends State<LoginPage> {
   int _selectedIndex = 0;
 
   @override

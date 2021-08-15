@@ -1,3 +1,4 @@
+//어딘가에서 주어온 리스트 포맷...
 import 'package:flutter/material.dart';
 
 void main() {

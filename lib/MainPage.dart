@@ -1,10 +1,19 @@
+//앱 메인 페이지
 import 'package:book_demo/BookSearchPage.dart';
 import 'package:book_demo/BookSearchResultPage.dart';
+import 'package:book_demo/PersonalInfoPage.dart';
 import 'package:flashy_tab_bar/flashy_tab_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'Const.dart';
-import 'BookAddPage.dart';
-import 'B_MyBookShelf.dart';
+import 'BookScanPage.dart';
+import 'BookShelfPage.dart';
+import 'package:book_demo/BookClipPage.dart';
+import 'MessageList.dart';
+import 'RandomTalkPage.dart';
+import 'package:book_demo/LoginPage.dart';
+import 'NoticeBoardPage.dart';
+import 'Setting.dart';
 
 class MainPage extends StatefulWidget {
   //MyHomePage({Key key, this.title}) : super(key: key);
@@ -51,34 +60,14 @@ class _MainPageState extends State<MainPage> {
         ],
       ),
       body: _selectedIndex == 0
-          ? MyBookShelfPage()
+          ? BookShelfPage()
           : _selectedIndex == 1
               ? BookSearchPage()
               : _selectedIndex == 2
-                  ? MainPage()
+                  ? BookClipPage()
                   : _selectedIndex == 3
-                      ? MyBookAddPage()
-                      : BookSearchResultPage(),
-      //child: PageView(
-      // controller: _pageController,
-      //children: List.generate(4, (index) {
-      //return Container(
-      //child: Center(
-      // child: Text("data $index"),
-      // ),
-      //color: Colors.primaries.elementAt(index),
-      //);
-      //}),
-      // onPageChanged: (int index) {
-      //setState(() => _selectedIndex = index)
-      //},
-      // ),
-      //Container(
-      //alignment: Alignment.center,
-      //child: Image.asset(
-      //'images/simplejpmap.png',
-      //width: 250.0,
-
+                      ? MessageListPage()
+                      : RandomTalkPage(),
       drawer: Drawer(
         child: ListView(
           shrinkWrap: true,
@@ -108,34 +97,49 @@ class _MainPageState extends State<MainPage> {
                 leading: Icon(Icons.account_box_rounded),
                 title: Text("개인 정보 관리", style: kDrawerText),
                 onTap: () {
-                  Navigator.pop(context);
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => PerInfoPage(),
+                      ));
                 }),
-            ListTile(
+            /*ListTile(
                 leading: Icon(Icons.assessment),
                 title: Text("이용 내역", style: kDrawerText),
                 onTap: () {
                   Navigator.pop(context);
-                }),
+                }),*/
             ListTile(
                 leading: Icon(Icons.archive),
-                title: Text("저장한 글", style: kDrawerText),
+                title: Text("공지사항", style: kDrawerText),
                 onTap: () {
-                  Navigator.pop(context);
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => NoticeBoardPage(),
+                      ));
                 }),
             ListTile(
                 leading: Icon(Icons.settings),
                 title: Text("설정", style: kDrawerText),
                 onTap: () {
-                  Navigator.pop(context);
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => SettingPage(),
+                      ));
                 }),
             Divider(),
             ListTile(
-              leading: Icon(Icons.power_settings_new),
-              title: Text("로그아웃", style: kDrawerText),
-              onTap: () {
-                Navigator.pop(context);
-              },
-            ),
+                leading: Icon(Icons.power_settings_new),
+                title: Text("로그아웃", style: kDrawerText),
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => LoginPage(),
+                      ));
+                }),
           ],
         ),
       ),
@@ -149,7 +153,7 @@ class _MainPageState extends State<MainPage> {
               context,
               MaterialPageRoute(
                 builder: (context) {
-                  return MyBookShelfPage();
+                  return BookScanPage();
                 },
               ),
             );

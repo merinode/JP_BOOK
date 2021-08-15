@@ -1,9 +1,9 @@
+//앱을 처음 기동할 때 보여지는 로딩페이지
 import 'package:flutter/material.dart';
 import 'BookSearchPage.dart';
 import 'MainPage.dart';
 
 void main() {
-  print("Hello Git!!");
   runApp(MyApp());
 }
 

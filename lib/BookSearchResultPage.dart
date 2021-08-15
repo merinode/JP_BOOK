@@ -1,3 +1,5 @@
+//키워드를 넣어 책을 검색하면 검색 결과가 나타나는 페이지
+//리스트
 import 'package:flutter/material.dart';
 import 'Const.dart';
 import 'BookSearchPage.dart';
