@@ -51,12 +51,14 @@ class _BookScanPageState extends State<BookScanPage> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: 200,
       alignment: Alignment.center,
       child: Column(
         //direction: Axis.vertical,
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
           Container(
+            height: 50,
             padding: EdgeInsets.all(20.0),
             child: TextField(
               style: TextStyle(
@@ -86,20 +88,20 @@ class _BookScanPageState extends State<BookScanPage> {
               ),
             ),
           ),
-          //ElevatedButton(
-          //style: ElevatedButton.styleFrom(
-          //primary: Color(0xffc17f84), // background
-          //onPrimary: Colors.white, // foreground
-          //),
-          //onPressed: () => startBarcodeScanStream(),
-          //child: Text(
-          //'Start barcode scan stream',
-          //style: kDrawerMainText,
-          //),
-          //),
-          /*SizedBox(
-                height: 50.0,
-              ),*/
+          ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              primary: Color(0xffc17f84), // background
+              onPrimary: Colors.white, // foreground
+            ),
+            onPressed: () => startBarcodeScanStream(),
+            child: Text(
+              'Start barcode scan stream',
+              style: kDrawerMainText,
+            ),
+          ),
+          SizedBox(
+            height: 50.0,
+          ),
           Text(
             'Scan result : $_scanBarcode\n',
             style: TextStyle(

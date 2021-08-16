@@ -21,7 +21,7 @@ class _BookSearchPageState extends State<BookSearchPage> {
   Widget build(BuildContext context) {
     return Container(
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           //SizedBox(
           //height: 50,
@@ -48,6 +48,7 @@ class _BookSearchPageState extends State<BookSearchPage> {
                 borderRadius: BorderRadius.circular(30.0),
                 color: Color(0xffcc888d),
                 child: MaterialButton(
+                  minWidth: 100,
                   //minWidth: MediaQuery.of(context).size.width,
                   padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
                   onPressed: () {
