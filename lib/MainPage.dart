@@ -1,10 +1,9 @@
 //앱 메인 페이지
 import 'package:book_demo/BookSearchPage.dart';
-import 'package:book_demo/BookSearchResultPage.dart';
 import 'package:book_demo/PersonalInfoPage.dart';
 import 'package:flashy_tab_bar/flashy_tab_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+import 'package:get/get.dart';
 import 'Const.dart';
 import 'BookScanPage.dart';
 import 'BookShelfPage.dart';
@@ -17,7 +16,6 @@ import 'Setting.dart';
 
 class MainPage extends StatefulWidget {
   //MyHomePage({Key key, this.title}) : super(key: key);
-
   //final String title;
 
   @override
@@ -97,11 +95,13 @@ class _MainPageState extends State<MainPage> {
                 leading: Icon(Icons.account_box_rounded),
                 title: Text("개인 정보 관리", style: kDrawerText),
                 onTap: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => PerInfoPage(),
-                      ));
+                  Get.to(PerInfoPage());
+
+                  //Navigator.push(
+                  //    context,
+                  //    MaterialPageRoute(
+                  //      builder: (context) => PerInfoPage(),
+                  //    ));
                 }),
             /*ListTile(
                 leading: Icon(Icons.assessment),

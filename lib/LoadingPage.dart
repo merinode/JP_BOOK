@@ -1,5 +1,6 @@
 //앱을 처음 기동할 때 보여지는 로딩페이지
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'BookSearchPage.dart';
 import 'MainPage.dart';
 
@@ -10,7 +11,7 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.grey,

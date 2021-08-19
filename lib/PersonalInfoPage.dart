@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:book_demo/MainPage.dart';
+import 'package:get/get.dart';
 
 class PerInfoPage extends StatefulWidget {
   //const PerInfoPage({Key? key}) : super(key: key);
@@ -11,6 +12,14 @@ class PerInfoPage extends StatefulWidget {
 class _PerInfoPageState extends State<PerInfoPage> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      body: SafeArea(
+        child: GestureDetector(
+            child: Text("Person Info Page!!!"),
+            onTap: () {
+              Get.back();
+            }),
+      ),
+    );
   }
 }

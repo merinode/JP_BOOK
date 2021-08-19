@@ -11,6 +11,8 @@ class NoticeBoardPage extends StatefulWidget {
 class _NoticeBoardPageState extends State<NoticeBoardPage> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      appBar: AppBar(),
+    );
   }
 }

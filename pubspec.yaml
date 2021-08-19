@@ -15,10 +15,12 @@ dependencies:
   cupertino_icons: ^1.0.2
   flashy_tab_bar: ^0.0.3
   flutter_barcode_scanner: ^2.0.0
+  get: ^4.1.4
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
 
 flutter:
 

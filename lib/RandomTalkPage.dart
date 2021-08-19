@@ -15,6 +15,6 @@ class RandomTalkPage extends StatefulWidget {
 class _RandomTalkPageState extends State<RandomTalkPage> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold();
   }
 }
