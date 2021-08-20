@@ -54,21 +54,3 @@ class _BookSearchResultPageState extends State<BookSearchResultPage> {
     );
   }
 }
-
-Widget _buildList() => ListView(
-      children: [
-        _tile("책이름", "지역: 요코하마"),
-        _tile("안녕하세요?", "반가워요!!"),
-        _tile("안녕하세요?", "반가워요!!"),
-        _tile("안녕하세요?", "반가워요!!"),
-        _tile("안녕하세요?", "반가워요!!"),
-        _tile("안녕하세요?", "반가워요!!"),
-        _tile("안녕하세요?", "반가워요!!"),
-        _tile("안녕하세요?", "반가워요!!"),
-      ],
-    );
-
-ListTile _tile(String title, String subtitle) => ListTile(
-    title: Text(title),
-    subtitle: Text(subtitle),
-    leading: Image.asset("images/crossing.jpg"));

@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:book_demo/Const.dart';
 import 'MainPage.dart';
+import 'package:get/get.dart';
 import 'package:book_demo/MainPage.dart';
 import 'package:flashy_tab_bar/flashy_tab_bar.dart';
 import 'package:book_demo/BookSearchResultPage.dart';
@@ -32,18 +33,34 @@ class _BookShelfPageState extends State<BookShelfPage> {
 
 Widget _buildList() => ListView(
       children: [
-        _tile("책이름", "지역: 요코하마"),
-        _tile("안녕하세요?", "반가워요!!"),
-        _tile("안녕하세요?", "반가워요!!"),
-        _tile("안녕하세요?", "반가워요!!"),
-        _tile("안녕하세요?", "반가워요!!"),
-        _tile("안녕하세요?", "반가워요!!"),
-        _tile("안녕하세요?", "반가워요!!"),
-        _tile("안녕하세요?", "반가워요!!"),
+        _tile("책이름", "자기계발", "요코하마", 500),
+        _tile("책이름", "자기계발", "요코하마", 500),
+        _tile("책이름", "자기계발", "요코하마", 500),
+        _tile("책이름", "자기계발", "요코하마", 500),
+        _tile("책이름", "자기계발", "요코하마", 500),
+        _tile("책이름", "자기계발", "요코하마", 500),
+        _tile("책이름", "자기계발", "요코하마", 500),
+        _tile("책이름", "자기계발", "요코하마", 500),
       ],
     );
 
-ListTile _tile(String title, String subtitle) => ListTile(
-    title: Text(title),
-    subtitle: Text(subtitle),
-    leading: Image.asset("images/crossing.jpg"));
+ListTile _tile(String title, String subtitle, String area, int price) =>
+    ListTile(
+        title: Text(title),
+        subtitle: Text(subtitle),
+        //area: Text(area),
+        //int: Text(price),
+        leading: ConstrainedBox(
+          constraints: BoxConstraints(
+            minWidth: 100,
+            minHeight: 260,
+            maxWidth: 110,
+            maxHeight: 280,
+          ),
+          child: Image.asset("images/crossing.jpg", fit: BoxFit.fill),
+        ),
+        onTap: () {
+          Get.to(MainPage());
+          //Navigator.push
+          //  context, MaterialPageRoute(builder: (context) => MainPage()));
+        });

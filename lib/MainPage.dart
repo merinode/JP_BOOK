@@ -12,7 +12,8 @@ import 'MessageList.dart';
 import 'RandomTalkPage.dart';
 import 'package:book_demo/LoginPage.dart';
 import 'NoticeBoardPage.dart';
-import 'Setting.dart';
+import 'SettingPage.dart';
+import 'LogoutPage.dart';
 
 class MainPage extends StatefulWidget {
   //MyHomePage({Key key, this.title}) : super(key: key);
@@ -36,27 +37,20 @@ class _MainPageState extends State<MainPage> {
     return Scaffold(
       backgroundColor: Color(0xffeaebed),
       appBar: AppBar(
-        backgroundColor: Color(0xffc17f84),
-        title: Center(
-            child:
-                Text('그라카이브', style: kAppBarText, textAlign: TextAlign.center)),
-        actions: <Widget>[
-          IconButton(
-            icon: Icon(
-              Icons.sensor_door,
-              color: Colors.white,
-            ),
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) {
-                  return MainPage();
-                }),
-              );
-            },
-          ),
-        ],
-      ),
+          backgroundColor: Color(0xffc17f84),
+          title: Center(
+              child: Text('그라카이브',
+                  style: kAppBarText, textAlign: TextAlign.center)),
+          actions: <Widget>[
+            IconButton(
+                icon: Icon(
+                  Icons.sensor_door,
+                  color: Colors.white,
+                ),
+                onPressed: () {
+                  Get.to(MainPage());
+                })
+          ]),
       body: _selectedIndex == 0
           ? BookShelfPage()
           : _selectedIndex == 1
@@ -82,11 +76,6 @@ class _MainPageState extends State<MainPage> {
               decoration: BoxDecoration(
                 color: Color(0xFF0cc888d),
               ),
-              //image: DecorationImage(
-              //image: ExactAssetImage('images/kaonashi.jpeg'),
-              //fit: BoxFit.cover,
-              //  ),
-              //),
               currentAccountPicture: CircleAvatar(
                 backgroundImage: ExactAssetImage('images/kaonashi.jpeg'),
               ),
@@ -95,50 +84,26 @@ class _MainPageState extends State<MainPage> {
                 leading: Icon(Icons.account_box_rounded),
                 title: Text("개인 정보 관리", style: kDrawerText),
                 onTap: () {
-                  Get.to(PerInfoPage());
-
-                  //Navigator.push(
-                  //    context,
-                  //    MaterialPageRoute(
-                  //      builder: (context) => PerInfoPage(),
-                  //    ));
+                  Get.to(PersonalInfoPage());
                 }),
-            /*ListTile(
-                leading: Icon(Icons.assessment),
-                title: Text("이용 내역", style: kDrawerText),
-                onTap: () {
-                  Navigator.pop(context);
-                }),*/
             ListTile(
                 leading: Icon(Icons.archive),
                 title: Text("공지사항", style: kDrawerText),
                 onTap: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => NoticeBoardPage(),
-                      ));
+                  Get.to(NoticeBoardPage());
                 }),
             ListTile(
                 leading: Icon(Icons.settings),
                 title: Text("설정", style: kDrawerText),
                 onTap: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => SettingPage(),
-                      ));
+                  Get.to(SettingPage());
                 }),
             Divider(),
             ListTile(
                 leading: Icon(Icons.power_settings_new),
                 title: Text("로그아웃", style: kDrawerText),
                 onTap: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => LoginPage(),
-                      ));
+                  Get.to(LogoutPage());
                 }),
           ],
         ),
@@ -225,21 +190,3 @@ class _MainPageState extends State<MainPage> {
     );
   }
 }
-
-Widget _buildList() => ListView(
-      children: [
-        _tile("책이름", "지역: 요코하마"),
-        _tile("안녕하세요?", "반가워요!!"),
-        _tile("안녕하세요?", "반가워요!!"),
-        _tile("안녕하세요?", "반가워요!!"),
-        _tile("안녕하세요?", "반가워요!!"),
-        _tile("안녕하세요?", "반가워요!!"),
-        _tile("안녕하세요?", "반가워요!!"),
-        _tile("안녕하세요?", "반가워요!!"),
-      ],
-    );
-
-ListTile _tile(String title, String subtitle) => ListTile(
-    title: Text(title),
-    subtitle: Text(subtitle),
-    leading: Image.asset("images/crossing.jpg"));
