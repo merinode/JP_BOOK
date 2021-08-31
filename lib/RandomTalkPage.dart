@@ -4,6 +4,9 @@
 //처음에는 공지사항처럼 관리자가 일방적으로 정보를 전달
 
 import 'package:flutter/material.dart';
+import 'package:book_demo/Const.dart';
+import 'package:get/get.dart';
+import 'package:book_demo/MainPage.dart';
 
 class RandomTalkPage extends StatefulWidget {
   // const RandomTalkPage({Key? key}) : super(key: key);

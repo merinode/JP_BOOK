@@ -34,7 +34,7 @@ class _NoticeBoardPageState extends State<NoticeBoardPage> {
           padding: const EdgeInsets.all(20.0),
           children: [
             Container(
-              height: 100,
+              height: 70,
               color: Color(0xffc17f84),
               child: const Center(child: Text('정보 공개 설정')),
             ),
@@ -43,14 +43,18 @@ class _NoticeBoardPageState extends State<NoticeBoardPage> {
               width: 30,
             ),
             Container(
-              height: 50,
+              height: 70,
               color: Color(0xffc17f84),
-              child: const Center(child: Text('정보 공개 설정')),
+              child: const Center(child: Text('xx xx 설정')),
+            ),
+            SizedBox(
+              height: 20,
+              width: 30,
             ),
             Container(
-              height: 50,
+              height: 70,
               color: Color(0xffc17f84),
-              child: const Center(child: Text('정보 공개 설정')),
+              child: const Center(child: Text('xx xx 설정')),
             ),
           ],
         ));

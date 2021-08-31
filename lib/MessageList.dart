@@ -11,6 +11,6 @@ class MessageListPage extends StatefulWidget {
 class _MessageListPageState extends State<MessageListPage> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold();
   }
 }
