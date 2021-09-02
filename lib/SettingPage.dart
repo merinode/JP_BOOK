@@ -26,10 +26,10 @@ class _SettingPageState extends State<SettingPage> {
   void initState() {
     BookModel book1 = BookModel();
     book1.name = 'book1';
-    book1.price = 100;
+    book1.price = '100Yen';
     BookModel book2 = BookModel();
     book2.name = 'book2';
-    book2.price = 200;
+    book2.price = '200Yen';
 
     books.add(book1);
     books.add(book2);

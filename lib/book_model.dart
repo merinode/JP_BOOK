@@ -2,6 +2,6 @@ class BookModel {
   String name;
   String area;
   String category;
-  int price;
+  String price;
   String imageUrl;
 }
