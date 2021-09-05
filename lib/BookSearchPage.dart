@@ -33,9 +33,7 @@ class _BookSearchPageState extends State<BookSearchPage> {
                 color: Colors.white24,
               ),
               decoration: kTextFieldInputDecoration,
-              onChanged: (value) {
-                //cityName = value;
-              },
+              onChanged: (value) {},
             ),
           ),
           SizedBox(

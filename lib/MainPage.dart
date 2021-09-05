@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'Const.dart';
 import 'BookScanPage.dart';
-import 'BookShelfPage.dart';
+import 'NewBookList.dart';
 import 'package:book_demo/BookClipPage.dart';
 import 'MessageList.dart';
 import 'RandomTalkPage.dart';
@@ -52,7 +52,7 @@ class _MainPageState extends State<MainPage> {
                 })
           ]),
       body: _selectedIndex == 0
-          ? BookShelfPage()
+          ? NewBookListPage()
           : _selectedIndex == 1
               ? BookSearchPage()
               : _selectedIndex == 2
@@ -143,7 +143,7 @@ class _MainPageState extends State<MainPage> {
           FlashyTabBarItem(
             icon: Icon(Icons.auto_stories),
             title: Text(
-              '내서재',
+              '전지역',
               style: kBottomBarText,
             ),
           ),

@@ -4,4 +4,5 @@ class BookModel {
   String category;
   String price;
   String imageUrl;
+  String subarea;
 }
