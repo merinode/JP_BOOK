@@ -50,67 +50,68 @@ class _BookScanPageState extends State<BookScanPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 200,
-      alignment: Alignment.center,
-      child: Column(
-        //direction: Axis.vertical,
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: <Widget>[
-          Container(
-            height: 50,
-            padding: EdgeInsets.all(20.0),
-            child: TextField(
-              style: TextStyle(
-                color: Colors.white24,
+    return Scaffold(
+      body: Container(
+        //height: 200,
+        alignment: Alignment.center,
+        child: Column(
+          //direction: Axis.vertical,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Container(
+              //height: 50,
+              padding: EdgeInsets.all(20.0),
+              child: TextField(
+                style: TextStyle(
+                  color: Colors.white24,
+                ),
+                decoration: kIsbnSearchInputDecoration,
+                onChanged: (value) {
+                  print(value);
+                  print(value.length);
+                  //cityName = value;
+                },
               ),
-              decoration: kIsbnSearchInputDecoration,
-              onChanged: (value) {
-                //cityName = value;
-              },
             ),
-          ),
-          /*SizedBox(
-                height: 50.0,
-              ),*/
-          SizedBox(
-            width: 200,
-            height: 50,
-            child: ElevatedButton(
+            SizedBox(
+              width: 200,
+              height: 50,
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  primary: Color(0xffc17f84), // background
+                  onPrimary: Colors.white, // foreground
+                ),
+                onPressed: () => scanBarcodeNormal(),
+                child: Text(
+                  'ISBN 바코드 스캔',
+                  style: kDrawerMainText,
+                ),
+              ),
+            ),
+            ElevatedButton(
               style: ElevatedButton.styleFrom(
                 primary: Color(0xffc17f84), // background
                 onPrimary: Colors.white, // foreground
               ),
-              onPressed: () => scanBarcodeNormal(),
+              onPressed: () => startBarcodeScanStream(),
               child: Text(
-                'ISBN 바코드 스캔',
+                'Start barcode scan stream',
                 style: kDrawerMainText,
               ),
             ),
-          ),
-          ElevatedButton(
-            style: ElevatedButton.styleFrom(
-              primary: Color(0xffc17f84), // background
-              onPrimary: Colors.white, // foreground
+            SizedBox(
+              height: 50.0,
             ),
-            onPressed: () => startBarcodeScanStream(),
-            child: Text(
-              'Start barcode scan stream',
-              style: kDrawerMainText,
+            Text(
+              'Scan result : $_scanBarcode\n',
+              style: TextStyle(
+                fontSize: 20,
+                color: Color(0xffc17f84),
+                fontFamily: 'DoHyeon',
+              ),
             ),
-          ),
-          SizedBox(
-            height: 50.0,
-          ),
-          Text(
-            'Scan result : $_scanBarcode\n',
-            style: TextStyle(
-              fontSize: 20,
-              color: Color(0xffc17f84),
-              fontFamily: 'DoHyeon',
-            ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

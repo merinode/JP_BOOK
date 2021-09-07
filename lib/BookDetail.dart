@@ -4,12 +4,27 @@ import 'book_model.dart';
 
 class BookDetailPage extends StatefulWidget {
   //const BookDetail({Key? key}) : super(key: key);
+  /*
+  final List<BookModel> books;
+  final int index;
+  BookDetailPage({this.books, this.index});
+  */
+  final BookModel book;
+
+  BookDetailPage({this.book});
 
   @override
   _BookDetailPageState createState() => _BookDetailPageState();
 }
 
 class _BookDetailPageState extends State<BookDetailPage> {
+  @override
+  void initState() {
+    super.initState();
+
+    print(widget.book.name);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

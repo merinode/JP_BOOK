@@ -37,54 +37,76 @@ class _NewBookListPageState extends State<NewBookListPage> {
               itemBuilder: (BuildContext context, int index) {
                 return GestureDetector(
                   onTap: () {
-                    Get.to(() => BookDetailPage());
+                    /*
+                    Get.to(() => BookDetailPage(
+                          books: books,
+                          index: index,
+                        ));
+                        */
+                    Get.to(() => BookDetailPage(book: books[index]));
                   },
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  child: Column(
                     children: [
                       SizedBox(
-                        width: 10,
+                        height: 10,
                       ),
-                      Image.asset(
-                        'images/${books[index].imageUrl}',
-                        height: 120,
-                        width: 120,
-                      ),
-                      Column(
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
                         children: [
-                          Text(
-                            books[index].name,
-                            style: TextStyle(
-                              fontFamily: 'Dohyeon',
-                              fontWeight: FontWeight.normal,
-                              fontSize: 17,
+                          SizedBox(
+                            width: 10,
+                          ),
+                          Image.asset(
+                            'images/${books[index].imageUrl}',
+                            fit: BoxFit.cover,
+                            height: 120,
+                            width: 120,
+                          ),
+                          SizedBox(width: 10),
+                          Container(
+                            width: MediaQuery.of(context).size.width * 0.2,
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  books[index].name,
+                                  style: TextStyle(
+                                    fontFamily: 'Dohyeon',
+                                    fontWeight: FontWeight.normal,
+                                    fontSize: 17,
+                                  ),
+                                ),
+                              ],
                             ),
                           ),
-                        ],
-                      ),
-                      Column(
-                        children: [
-                          Text(books[index].area,
-                              style: TextStyle(
-                                fontFamily: 'Dohyeon',
-                                fontWeight: FontWeight.normal,
-                                fontSize: 15,
-                                color: Color(0xffc17f84),
-                              )),
-                          /*Text(books[index].subarea,
+                          Padding(
+                            padding: EdgeInsets.only(left: 10, right: 10),
+                            child: Column(
+                              children: [
+                                Text(books[index].area,
+                                    style: TextStyle(
+                                      fontFamily: 'Dohyeon',
+                                      fontWeight: FontWeight.normal,
+                                      fontSize: 15,
+                                      color: Color(0xffc17f84),
+                                    )),
+                                /*Text(books[index].subarea,
                               style: TextStyle(
                                 fontFamily: 'Dohyeon',
                                 fontWeight: FontWeight.normal,
                                 fontSize: 15,
                                 color: Color(0xffc17f84),
                               )),*/
-                          //Text(books[index].price),
-                          //Text(books[index].category),
+                                //Text(books[index].price),
+                                //Text(books[index].category),
+                              ],
+                            ),
+                          ),
+                          SizedBox(
+                            width: 10,
+                          ),
                         ],
-                      ),
-                      SizedBox(
-                        width: 10,
-                      ),
+                      )
                     ],
                   ),
                 );
