@@ -1,12 +1,7 @@
 //구매한 책, 팔려고 등록한 책이 리스트로 보여지는 페이지
 import 'package:flutter/material.dart';
-import 'package:book_demo/Const.dart';
-import 'MainPage.dart';
 import 'package:get/get.dart';
-import 'package:book_demo/MainPage.dart';
-import 'package:flashy_tab_bar/flashy_tab_bar.dart';
-import 'package:book_demo/BookSearchResultPage.dart';
-import 'book_model.dart';
+import 'Book_model.dart';
 import 'package:book_demo/BookDetail.dart';
 
 class NewBookListPage extends StatefulWidget {
@@ -48,23 +43,23 @@ class _NewBookListPageState extends State<NewBookListPage> {
                   child: Column(
                     children: [
                       SizedBox(
-                        height: 10,
+                        height: 20,
                       ),
                       Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-                          SizedBox(
-                            width: 10,
-                          ),
+                          //SizedBox(
+                          //width: 10,
+                          //),
                           Image.asset(
                             'images/${books[index].imageUrl}',
                             fit: BoxFit.cover,
-                            height: 120,
-                            width: 120,
+                            height: 80,
+                            width: 80,
                           ),
                           SizedBox(width: 10),
                           Container(
-                            width: MediaQuery.of(context).size.width * 0.2,
+                            width: MediaQuery.of(context).size.width * 0.4,
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
@@ -72,22 +67,22 @@ class _NewBookListPageState extends State<NewBookListPage> {
                                   books[index].name,
                                   style: TextStyle(
                                     fontFamily: 'Dohyeon',
-                                    fontWeight: FontWeight.normal,
-                                    fontSize: 17,
+                                    fontWeight: FontWeight.w100,
+                                    fontSize: 16,
                                   ),
                                 ),
                               ],
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsets.only(left: 10, right: 10),
+                            padding: EdgeInsets.only(left: 30, right: 10),
                             child: Column(
                               children: [
                                 Text(books[index].area,
                                     style: TextStyle(
-                                      fontFamily: 'Dohyeon',
+                                      fontFamily: 'NanumMyeongjo',
                                       fontWeight: FontWeight.normal,
-                                      fontSize: 15,
+                                      fontSize: 13,
                                       color: Color(0xffc17f84),
                                     )),
                                 /*Text(books[index].subarea,
@@ -102,9 +97,9 @@ class _NewBookListPageState extends State<NewBookListPage> {
                               ],
                             ),
                           ),
-                          SizedBox(
-                            width: 10,
-                          ),
+                          //SizedBox(
+                          //width: 10,
+                          //),
                         ],
                       )
                     ],
@@ -119,7 +114,7 @@ class _NewBookListPageState extends State<NewBookListPage> {
     BookModel book1 = BookModel();
     book1.name = '문명의 충돌';
     book1.price = '200Yen';
-    book1.area = '도쿄';
+    book1.area = 'Tokyo';
     book1.subarea = '메구로';
     book1.category = '사회/문화';
     book1.imageUrl = 'book1.jpeg';
@@ -127,7 +122,7 @@ class _NewBookListPageState extends State<NewBookListPage> {
     BookModel book2 = BookModel();
     book2.name = '1Q84';
     book2.price = '500Yen';
-    book2.area = '도쿄도';
+    book2.area = 'Tokyo';
     book2.subarea = '메구로';
     book2.category = '小説';
     book2.imageUrl = 'book2.jpeg';
@@ -135,7 +130,7 @@ class _NewBookListPageState extends State<NewBookListPage> {
     BookModel book3 = BookModel();
     book3.name = '언어의 온도';
     book3.price = '500Yen';
-    book3.area = '후쿠오카';
+    book3.area = 'Fukuoka';
     book3.subarea = '메구로';
     book3.category = '에세이';
     book3.imageUrl = 'book3.jpeg';

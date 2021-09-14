@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:book_demo/NewBookList.dart';
-import 'book_model.dart';
+import 'Book_model.dart';
 
 class BookDetailPage extends StatefulWidget {
   //const BookDetail({Key? key}) : super(key: key);

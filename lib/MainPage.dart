@@ -37,7 +37,7 @@ class _MainPageState extends State<MainPage> {
     return Scaffold(
       backgroundColor: Color(0xffeaebed),
       appBar: AppBar(
-          backgroundColor: Color(0xffc17f84),
+          backgroundColor: Color(0xff0e0a8ac),
           title: Center(
               child: Text('그라카이브',
                   style: kAppBarText, textAlign: TextAlign.center)),
