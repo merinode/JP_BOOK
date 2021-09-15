@@ -16,6 +16,7 @@ dependencies:
   flashy_tab_bar: ^0.0.3
   flutter_barcode_scanner: ^2.0.0
   get: ^4.1.4
+  card_swiper: ^1.0.4
 
 
 dev_dependencies:

@@ -1,5 +1,8 @@
 //주고받은 메시지가 보여지는 페이지
 import 'package:flutter/material.dart';
+import 'package:book_demo/Const.dart';
+import 'package:get/get.dart';
+import 'package:book_demo/MainPage.dart';
 
 class MessageListPage extends StatefulWidget {
   //const MessageListPage({Key? key}) : super(key: key);
@@ -9,8 +12,37 @@ class MessageListPage extends StatefulWidget {
 }
 
 class _MessageListPageState extends State<MessageListPage> {
+  TextEditingController _textEditingController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      body: Container(
+        padding: EdgeInsets.symmetric(
+          horizontal: 10.0,
+          vertical: 8.0,
+        ),
+        child: Row(
+          children: [
+            Expanded(
+              child: TextField(
+                controller: _textEditingController,
+                decoration: InputDecoration(hintText: '메세지를 입력하세요.'),
+              ),
+            ),
+            SizedBox(
+              width: 8.0,
+            ),
+            FlatButton(
+              onPressed: () {
+                //_handleSubmittedText(_textEditingController.text)
+              },
+              child: Text("Send"),
+              color: Color(0xffc17f84),
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }

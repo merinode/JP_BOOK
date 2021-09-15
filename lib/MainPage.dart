@@ -39,7 +39,7 @@ class _MainPageState extends State<MainPage> {
       appBar: AppBar(
           backgroundColor: Color(0xff0e0a8ac),
           title: Center(
-              child: Text('그라카이브',
+              child: Text('TEWAK',
                   style: kAppBarText, textAlign: TextAlign.center)),
           actions: <Widget>[
             IconButton(
@@ -174,7 +174,7 @@ class _MainPageState extends State<MainPage> {
           FlashyTabBarItem(
             icon: Icon(Icons.article),
             title: Text(
-              '이야기',
+              '메시지',
               style: kBottomBarText,
             ),
           ),
