@@ -1,6 +1,5 @@
 //자주 이용하는 상수값constant을 지정
 import 'package:flutter/material.dart';
-import 'BookSearchPage.dart';
 
 const kMainColor = InputDecoration(
   fillColor: Color(0xffcc888d),

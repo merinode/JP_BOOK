@@ -28,6 +28,9 @@ class _MessageListPageState extends State<MessageListPage> {
               child: TextField(
                 controller: _textEditingController,
                 decoration: InputDecoration(hintText: '메세지를 입력하세요.'),
+                onSubmitted: (String text) {
+                  print("onsubmitted: $text");
+                },
               ),
             ),
             SizedBox(
@@ -35,7 +38,7 @@ class _MessageListPageState extends State<MessageListPage> {
             ),
             FlatButton(
               onPressed: () {
-                //_handleSubmittedText(_textEditingController.text)
+                print(_textEditingController.text);
               },
               child: Text("Send"),
               color: Color(0xffc17f84),

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:book_demo/NewBookList.dart';
 import 'Book_model.dart';
 
 class BookDetailPage extends StatefulWidget {

@@ -1,7 +1,7 @@
 //앱 메인 페이지
 import 'package:book_demo/BookSearchPage.dart';
 import 'package:book_demo/PersonalInfoPage.dart';
-import 'package:flashy_tab_bar/flashy_tab_bar.dart';
+import 'package:convex_bottom_bar/convex_bottom_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'Const.dart';
@@ -10,7 +10,6 @@ import 'NewBookList.dart';
 import 'package:book_demo/BookClipPage.dart';
 import 'MessageList.dart';
 import 'RandomTalkPage.dart';
-import 'package:book_demo/LoginPage.dart';
 import 'NoticeBoardPage.dart';
 import 'SettingPage.dart';
 import 'LogoutPage.dart';
@@ -25,6 +24,38 @@ class MainPage extends StatefulWidget {
 
 class _MainPageState extends State<MainPage> {
   int _selectedIndex = 0;
+  static const TextStyle optionStyle =
+      TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
+  final listWidget = [
+    Text(
+      'Index 0: 내서재',
+      style: optionStyle,
+    ),
+    Text(
+      'Index 1: 책검색',
+      style: optionStyle,
+    ),
+    Text(
+      'Index 2: 북클립',
+      style: optionStyle,
+    ),
+    Text(
+      'Index 3: 이야기',
+      style: optionStyle,
+    ),
+    Text(
+      'Index 4: LOCAL',
+      style: optionStyle,
+    ),
+  ];
+
   PageController _pageController = PageController();
 
   @override
@@ -130,62 +161,22 @@ class _MainPageState extends State<MainPage> {
         ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-      bottomNavigationBar: FlashyTabBar(
-        animationCurve: Curves.linear,
-        backgroundColor: Color(0xffe5e5e5),
-        selectedIndex: _selectedIndex,
-        showElevation: true,
-        onItemSelected: (index) => setState(() {
-          print('index : $index');
-          _selectedIndex = index;
-        }),
-        items: [
-          FlashyTabBarItem(
-            icon: Icon(Icons.auto_stories),
-            title: Text(
-              '전지역',
-              style: kBottomBarText,
-            ),
-          ),
-          FlashyTabBarItem(
-            icon: Icon(Icons.search),
-            title: Text(
-              '책검색',
-              style: kBottomBarText,
-            ),
-            //onPressed: () {
-            //Navigator.push(
-            //context,
-            // MaterialPageRoute(builder: (context) {
-            // return MainPage();
-            // }),
-            //),
-            //},
-          ),
-          FlashyTabBarItem(
-            icon: Icon(
-              Icons.attach_file_outlined,
-            ),
-            title: Text(
-              '북클립',
-              style: kBottomBarText,
-            ),
-          ),
-          FlashyTabBarItem(
-            icon: Icon(Icons.article),
-            title: Text(
-              '메시지',
-              style: kBottomBarText,
-            ),
-          ),
-          FlashyTabBarItem(
-            icon: Icon(Icons.emoji_food_beverage_outlined),
-            title: Text(
-              'Coffee?',
-              style: kBottomBarText,
-            ),
-          ),
-        ],
+      bottomNavigationBar: SizedBox(
+        height: 40,
+        child: ConvexAppBar(
+          items: [
+            TabItem(icon: Icons.auto_stories, title: '내서재'),
+            TabItem(icon: Icons.search, title: '내서재'),
+            TabItem(icon: Icons.attach_file_outlined, title: '내서재'),
+            TabItem(icon: Icons.article, title: '내서재'),
+            TabItem(icon: Icons.emoji_food_beverage_outlined, title: '내서재'),
+          ],
+          onTap: _onItemTapped,
+          activeColor: Color(0xff0e0a8ac),
+          initialActiveIndex: _selectedIndex,
+          style: TabStyle.flip,
+          backgroundColor: Colors.white,
+        ),
       ),
     );
   }

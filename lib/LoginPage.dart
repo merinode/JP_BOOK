@@ -2,7 +2,7 @@
 //현재는 inactive
 import 'package:book_demo/BookSearchPage.dart';
 import 'package:flutter/material.dart';
-import 'package:flashy_tab_bar/flashy_tab_bar.dart';
+import 'package:convex_bottom_bar/convex_bottom_bar.dart';
 import 'Const.dart';
 import 'package:book_demo/MainPage.dart';
 
@@ -16,6 +16,37 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   int _selectedIndex = 0;
+  static const TextStyle optionStyle =
+      TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
+  final listWidget = [
+    Text(
+      'Index 0: 내서재',
+      style: optionStyle,
+    ),
+    Text(
+      'Index 1: 책검색',
+      style: optionStyle,
+    ),
+    Text(
+      'Index 2: 북클립',
+      style: optionStyle,
+    ),
+    Text(
+      'Index 3: 이야기',
+      style: optionStyle,
+    ),
+    Text(
+      'Index 4: LOCAL',
+      style: optionStyle,
+    ),
+  ];
 
   @override
   void initState() {
@@ -74,53 +105,19 @@ class _LoginPageState extends State<LoginPage> {
         ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-      bottomNavigationBar: FlashyTabBar(
-        animationCurve: Curves.linear,
-        backgroundColor: Color(0xffe5e5e5),
-        selectedIndex: _selectedIndex,
-        showElevation: true,
-        onItemSelected: (index) => setState(() {
-          _selectedIndex = index;
-        }),
+      bottomNavigationBar: ConvexAppBar(
         items: [
-          FlashyTabBarItem(
-            icon: Icon(Icons.auto_stories),
-            title: Text(
-              '내서재',
-              style: kBottomBarText,
-            ),
-          ),
-          FlashyTabBarItem(
-            icon: Icon(Icons.search),
-            title: Text(
-              '책검색',
-              style: kBottomBarText,
-            ),
-          ),
-          FlashyTabBarItem(
-            icon: Icon(
-              Icons.attach_file_outlined,
-            ),
-            title: Text(
-              '북클립',
-              style: kBottomBarText,
-            ),
-          ),
-          FlashyTabBarItem(
-            icon: Icon(Icons.article),
-            title: Text(
-              '이야기',
-              style: kBottomBarText,
-            ),
-          ),
-          FlashyTabBarItem(
-            icon: Icon(Icons.emoji_food_beverage_outlined),
-            title: Text(
-              'Coffee?',
-              style: kBottomBarText,
-            ),
-          ),
+          TabItem(icon: Icons.auto_stories, title: '내서재'),
+          TabItem(icon: Icons.search, title: '책검색'),
+          TabItem(icon: Icons.attach_file_outlined, title: '북클립'),
+          TabItem(icon: Icons.article, title: '이야기'),
+          TabItem(icon: Icons.emoji_food_beverage_outlined, title: 'LOCAL'),
         ],
+        onTap: _onItemTapped,
+        activeColor: Colors.white54,
+        initialActiveIndex: _selectedIndex,
+        style: TabStyle.reactCircle,
+        backgroundColor: Color(0xffc17f84),
       ),
     );
   }

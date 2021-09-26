@@ -1,9 +1,11 @@
+import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:book_demo/MainPage.dart';
 import 'package:book_demo/Const.dart';
 import 'package:flutter/services.dart';
 import 'package:book_demo/BoodAddConfirmPage.dart';
+import 'package:image_picker/image_picker.dart';
 
 class BookAddPage extends StatefulWidget {
   //const BookAddPage({Key? key}) : super(key: key);
@@ -33,6 +35,20 @@ class _BookAddPageState extends State<BookAddPage> {
     'Toyama',
     'Shizuoka',
   ];
+
+  File pickedImageFile;
+  _getFromGallery() async {
+    PickedFile pickedFile = await ImagePicker().getImage(
+      source: ImageSource.gallery,
+      maxWidth: 1800,
+      maxHeight: 1800,
+    );
+    if (pickedFile != null) {
+      //File imageFile = File(pickedFile.path);
+      pickedImageFile = File(pickedFile.path);
+      print(pickedFile.path);
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -69,12 +85,37 @@ class _BookAddPageState extends State<BookAddPage> {
             ),
             SizedBox(height: 30),
             //Expanded(child: Divider()),
-            Container(
-              color: Colors.amber,
-              width: 200,
-              height: 200,
+            GestureDetector(
+              onTap: () async {
+                setState(() async {
+                  await _getFromGallery();
+                });
+
+                // _getFromGallery() async {
+                //   PickedFile pickedFile = await ImagePicker().getImage(
+                //     source: ImageSource.gallery,
+                //     maxWidth: 1800,
+                //     maxHeight: 1800,
+                //   );
+                //   if (pickedFile != null) {
+                //     File imageFile = File(pickedFile.path);
+                //   }
+                // };
+              },
+              child: Container(
+                color: Colors.amber,
+                width: 200,
+                height: 200,
+              ),
             ),
             //SizedBox(height: 10),
+            pickedImageFile != null
+                ? Image.file(
+                    pickedImageFile,
+                    width: 200,
+                    height: 200,
+                  )
+                : Container(),
             Container(
               padding: const EdgeInsets.all(40.0),
               child: Column(

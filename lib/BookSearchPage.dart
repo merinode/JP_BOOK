@@ -1,9 +1,7 @@
 //키워드를 넣어 책을 검색할 수 있는 페이지
 import 'dart:ui';
 import 'package:book_demo/BookSearchResultPage.dart';
-import 'package:flashy_tab_bar/flashy_tab_bar.dart';
 import 'package:flutter/material.dart';
-import 'MainPage.dart';
 import 'Const.dart';
 
 class BookSearchPage extends StatefulWidget {
