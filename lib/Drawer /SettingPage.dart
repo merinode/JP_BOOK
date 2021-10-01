@@ -1,8 +1,8 @@
-import 'package:book_demo/Book_model.dart';
+import 'package:book_demo/BottomBar/Book_model.dart';
 import 'package:flutter/material.dart';
 import 'package:book_demo/MainPage.dart';
 import 'package:get/get.dart';
-import 'package:book_demo/Const.dart';
+import 'package:book_demo/BottomBar/Const.dart';
 
 class SettingList {
   String title;

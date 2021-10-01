@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:book_demo/MainPage.dart';
-import 'package:book_demo/Const.dart';
+import 'package:book_demo/BottomBar/Const.dart';
 import 'package:get/get.dart';
 
 class NoticeBoardPage extends StatefulWidget {

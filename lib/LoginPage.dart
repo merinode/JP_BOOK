@@ -1,9 +1,9 @@
 //앱 로그인 페이지
 //현재는 inactive
-import 'package:book_demo/BookSearchPage.dart';
+import 'package:book_demo/BottomBar/BookSearchPage.dart';
 import 'package:flutter/material.dart';
 import 'package:convex_bottom_bar/convex_bottom_bar.dart';
-import 'Const.dart';
+import 'BottomBar/Const.dart';
 import 'package:book_demo/MainPage.dart';
 
 class LoginPage extends StatefulWidget {
@@ -85,26 +85,26 @@ class _LoginPageState extends State<LoginPage> {
           Container(),
         ],
       ),
-      floatingActionButton: Container(
-        width: 60.0,
-        height: 60.0,
-        child: FloatingActionButton(
-          backgroundColor: Color(0xff0e0a8ac),
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) {
-                return BookSearchPage();
-              }),
-            );
-          },
-          child: Icon(
-            Icons.plus_one,
-            size: 35.0,
-          ),
-        ),
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      // floatingActionButton: Container(
+      //   width: 60.0,
+      //   height: 60.0,
+      //   child: FloatingActionButton(
+      //     backgroundColor: Color(0xff0e0a8ac),
+      //     onPressed: () {
+      //       Navigator.push(
+      //         context,
+      //         MaterialPageRoute(builder: (context) {
+      //           return BookSearchPage();
+      //         }),
+      //       );
+      //     },
+      //     child: Icon(
+      //       Icons.plus_one,
+      //       size: 35.0,
+      //     ),
+      //   ),
+      //),
+      //floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       bottomNavigationBar: ConvexAppBar(
         items: [
           TabItem(icon: Icons.auto_stories, title: '내서재'),

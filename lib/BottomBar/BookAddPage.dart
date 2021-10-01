@@ -2,10 +2,11 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:book_demo/MainPage.dart';
-import 'package:book_demo/Const.dart';
 import 'package:flutter/services.dart';
-import 'package:book_demo/BoodAddConfirmPage.dart';
+import 'package:book_demo/BottomBar/BoodAddConfirmPage.dart';
 import 'package:image_picker/image_picker.dart';
+import 'Book_model.dart';
+import 'Const.dart';
 
 class BookAddPage extends StatefulWidget {
   //const BookAddPage({Key? key}) : super(key: key);
@@ -187,6 +188,8 @@ class _BookAddPageState extends State<BookAddPage> {
                           //minWidth: MediaQuery.of(context).size.width,
                           padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
                           onPressed: () {
+                            BookModel book = BookModel();
+                            //book.name
                             Navigator.push(
                               context,
                               MaterialPageRoute(builder: (context) {

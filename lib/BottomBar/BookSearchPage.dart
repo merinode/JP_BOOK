@@ -1,6 +1,6 @@
 //키워드를 넣어 책을 검색할 수 있는 페이지
 import 'dart:ui';
-import 'package:book_demo/BookSearchResultPage.dart';
+import 'package:book_demo/BottomBar/BookSearchResultPage.dart';
 import 'package:flutter/material.dart';
 import 'Const.dart';
 

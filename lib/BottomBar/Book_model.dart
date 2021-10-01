@@ -5,4 +5,5 @@ class BookModel {
   String price;
   String imageUrl;
   String subarea;
+  String quote;
 }

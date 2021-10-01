@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'Book_model.dart';
+import 'BottomBar/Book_model.dart';
+import 'BottomBar/NewBookList.dart';
 
 class BookDetailPage extends StatefulWidget {
   //const BookDetail({Key? key}) : super(key: key);
@@ -17,6 +18,11 @@ class BookDetailPage extends StatefulWidget {
 }
 
 class _BookDetailPageState extends State<BookDetailPage> {
+  int _selectedIndex = 0;
+  PageController _pageController = PageController();
+
+  List<BookModel> books = [];
+
   @override
   void initState() {
     super.initState();
@@ -59,7 +65,7 @@ class _BookDetailPageState extends State<BookDetailPage> {
                   child: Container(
                     alignment: Alignment.center,
                     child: Image.asset(
-                      'images/book1.jpeg',
+                      'images/${widget.book.imageUrl}',
                       width: 300.0,
                     ),
                   ),
@@ -80,7 +86,7 @@ class _BookDetailPageState extends State<BookDetailPage> {
                     margin: EdgeInsets.all(15),
                     child: Center(
                       child: Text(
-                        '"문화적 자기주장과 문명적 자기의식의 저항력 그 사이에 서 있는, 우리는 누구인가."',
+                        widget.book.quote,
                         style: TextStyle(
                           fontFamily: 'NanumMyeongjo-Regular',
                           //fontSize: 15.0,

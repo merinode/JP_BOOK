@@ -16,6 +16,7 @@ const kAppBarText = TextStyle(
   fontSize: 18.0,
   fontFamily: 'DoHyeon',
   fontWeight: FontWeight.normal,
+  color: Colors.white,
 );
 
 const kAppBarSearchText = TextStyle(
@@ -36,6 +37,13 @@ const kDrawerText = TextStyle(
   fontFamily: 'DoHyeon',
   fontWeight: FontWeight.normal,
   color: Color(0xffcc888d),
+);
+
+const kNormalText = TextStyle(
+  fontSize: 15.0,
+  fontFamily: 'NanumMyeongjo',
+  fontWeight: FontWeight.bold,
+  color: Color(0xff808080),
 );
 
 const kTextFieldInputDecoration = InputDecoration(

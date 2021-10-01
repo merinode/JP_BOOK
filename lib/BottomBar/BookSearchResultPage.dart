@@ -4,11 +4,11 @@ import 'package:flutter/material.dart';
 import 'Const.dart';
 import 'package:convex_bottom_bar/convex_bottom_bar.dart';
 import 'package:get/get.dart';
-import 'package:book_demo/PersonalInfoPage.dart';
-import 'package:book_demo/NoticeBoardPage.dart';
-import 'package:book_demo/SettingPage.dart';
-import 'package:book_demo/BookScanPage.dart';
-import 'package:book_demo/LogoutPage.dart';
+import 'package:book_demo/Drawer%20/PersonalInfoPage.dart';
+import 'package:book_demo/Drawer%20/NoticeBoardPage.dart';
+import 'package:book_demo/Drawer%20/SettingPage.dart';
+import 'package:book_demo/BottomBar/BookScanPage.dart';
+import 'package:book_demo/Drawer%20/LogoutPage.dart';
 
 class BookSearchResultPage extends StatefulWidget {
   //MyHomePage({Key key, this.title}) : super(key: key);

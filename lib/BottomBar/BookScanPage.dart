@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:book_demo/Const.dart';
+import 'package:book_demo/BottomBar/Const.dart';
 import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
 import 'package:get/get.dart';
-import 'package:book_demo/BookAddPage.dart';
+import 'package:book_demo/BottomBar/BookAddPage.dart';
 import 'package:book_demo/MainPage.dart';
 
 class BookScanPage extends StatefulWidget {
@@ -52,26 +52,28 @@ class _BookScanPageState extends State<BookScanPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-          backgroundColor: Color(0xffc17f84),
-          title: Center(
-              child: Text('그라카이브',
-                  style: kAppBarText, textAlign: TextAlign.center)),
-          actions: <Widget>[
-            IconButton(
-                icon: Icon(
-                  Icons.sensor_door,
-                  color: Colors.white,
-                ),
-                onPressed: () {
-                  Get.to(MainPage());
-                })
-          ]),
-      body: Container(
-        alignment: Alignment.center,
+      // appBar: AppBar(
+      //     backgroundColor: Color(0xffc17f84),
+      //     title: Center(
+      //         child: Text('그라카이브',
+      //             style: kAppBarText, textAlign: TextAlign.center)),
+      //     actions: <Widget>[
+      //       IconButton(
+      //           icon: Icon(
+      //             Icons.sensor_door,
+      //             color: Colors.white,
+      //           ),
+      //           onPressed: () {
+      //             Get.to(MainPage());
+      //           })
+      //     ]),
+      body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            SizedBox(
+              height: 70,
+            ),
             Center(
               child: Text(
                 '책 등록',

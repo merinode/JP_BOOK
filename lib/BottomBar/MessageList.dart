@@ -1,6 +1,6 @@
 //주고받은 메시지가 보여지는 페이지
 import 'package:flutter/material.dart';
-import 'package:book_demo/Const.dart';
+import 'package:book_demo/BottomBar/Const.dart';
 import 'package:get/get.dart';
 import 'package:book_demo/MainPage.dart';
 
